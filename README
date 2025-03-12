@@ -1,0 +1,64 @@
+# Campay Transaction API
+
+This program is a Go-based command-line application that allows users to initiate and check the status of mobile money transactions using the Campay API. It takes user inputs for phone number, amount, description, and reference before making API calls to process the transaction.
+
+## Features
+- Collects user input for transaction details.
+- Sends a POST request to the Campay API to initiate a transaction.
+- Waits for 20 seconds before checking the transaction status.
+- Sends a GET request to retrieve the transaction status.
+
+## Prerequisites
+Before running the program, ensure you have the following:
+
+- Go installed on your system ([Download Go](https://go.dev/dl/))
+- A Campay API key (stored in a `.env` file)
+- Internet connection for making API calls
+
+## Setup Instructions
+### 1. Clone the Repository
+```sh
+ git clone <repository-url>
+ cd <repository-folder>
+```
+
+### 2. Install Dependencies
+This program uses the `github.com/joho/godotenv` package to load environment variables. Install it using:
+```sh
+go get github.com/joho/godotenv
+```
+
+### 3. Create a `.env` File
+Create a `.env` file in the root directory and add your Campay API key:
+```
+API_KEY=your_api_key_here
+```
+
+### 4. Run the Program
+Compile and execute the program using:
+```sh
+go run main.go
+```
+
+### 5. Enter Required Details
+The program will prompt you to enter:
+- Your phone number (last 9 digits)
+- Transaction amount
+- Description
+- Reference ID
+
+After submitting the details, the transaction will be processed, and the status will be retrieved automatically.
+
+## Debugging
+- If you encounter API errors, ensure your API key is correct and valid.
+- Check the console logs for HTTP status codes and error messages.
+- Use the `fmt.Println` statements in the code to debug request payloads and responses.
+
+## Future Enhancements
+- Implement a retry mechanism for API calls.
+- Improve error handling and logging.
+- Add a user-friendly interface.
+
+## License
+This project is open-source and available for modification and distribution.
+
